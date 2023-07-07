@@ -1,10 +1,11 @@
 ---
 const { name } = Astro.props
 const isPreview = process.env.NODE_ENV == 'preview'
+
+// const includeTag = `<?php include $_SERVER['DOCUMENT_ROOT'] . '/ssi/${name}/index.html'; ?>`
+const includeTag = `<?php include '/www/ekzm_clients/astro-admin-lte-example/ssi/${name}/index.html'; ?>`
 ---
 
 <Fragment set:html={`<!-- start include ${name} -->`} />
-<Fragment
-  set:html={`<?php include $_SERVER['DOCUMENT_ROOT'] . '/ssi/${name}/index.html'; ?>`}
-/>
+<Fragment set:html={includeTag} />
 <Fragment set:html={`<!-- end include ${name} -->`} />

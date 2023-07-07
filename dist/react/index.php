@@ -429,7 +429,7 @@
           <div class="container-fluid">
             <!-- start layout-slot -->
             <!-- start include chakra-app -->
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/ssi/chakra-app/index.html'; ?>
+<?php include '/www/ekzm_clients/astro-admin-lte-example/ssi/chakra-app/index.html'; ?>
 <!-- end include chakra-app -->
             <!-- end layout-slot -->
           </div>
