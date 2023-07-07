@@ -3,6 +3,7 @@ import LteHeader from '@/components/ui/admin-lte/LteHeader.astro'
 import LteSide from '@/components/ui/admin-lte/LteSide.astro'
 import LteContentHeader from '@/components/ui/admin-lte/LteContentHeader.astro'
 import LteFooter from '@/components/ui/admin-lte/LteFooter.astro'
+import LteScripts from '@/components/ui/admin-lte/LteScripts.astro'
 export interface Props {
   meta: {
     title: string
@@ -51,19 +52,10 @@ const { meta } = Astro.props
           </div>
         </section>
       </div>
-
       <LteFooter />
-
       <aside class='control-sidebar control-sidebar-dark'></aside>
     </div>
 
-    <script src='https://adminlte.io/themes/v3/plugins/jquery/jquery.min.js'
-    ></script>
-    <script
-      src='https://adminlte.io/themes/v3/plugins/bootstrap/js/bootstrap.bundle.min.js'
-    ></script>
-    <script src='https://adminlte.io/themes/v3/dist/js/adminlte.min.js?v=3.2.0'
-    ></script>
-    <script src='https://adminlte.io/themes/v3/dist/js/demo.js'></script>
+    <LteScripts />
   </body>
 </html>

@@ -1,0 +1,10 @@
+---
+const { name } = Astro.props
+const isPreview = process.env.NODE_ENV == 'preview'
+---
+
+<Fragment set:html={`<!-- start include ${name} -->`} />
+<Fragment
+  set:html={`<?php include $_SERVER['DOCUMENT_ROOT'] . '/ssi/${name}/index.html'; ?>`}
+/>
+<Fragment set:html={`<!-- end include ${name} -->`} />

@@ -1,12 +1,14 @@
 ---
-// import { IndexPage } from '@/components/views/IndexPage'
 import Layout from '@/layouts/Layout.astro'
+import { MyApp } from '@/components/views/MyApp'
+import PhpInc from '@/components/PhpInc.astro'
 const meta = {
   title: 'React App',
   id: 'index',
 }
+const isDev = process.env.NODE_ENV == 'development'
 ---
 
 <Layout meta={meta}>
-  <p>OK</p>
+  {isDev ? <MyApp client:only /> : <PhpInc name={'chakra-app'} />}
 </Layout>

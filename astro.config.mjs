@@ -1,7 +1,7 @@
 import { defineConfig } from 'astro/config'
 import react from '@astrojs/react'
-import { includes } from 'lodash-es'
-import { writeFileSync, readFileSync, renameSync } from 'fs'
+import { renamePhp } from './npm-scripts/astro/renamePhp.mjs'
+import { removeDoctype } from './npm-scripts/astro/removeDoctype.mjs'
 
 const ssiDir = 'ssi'
 
@@ -10,21 +10,11 @@ export default defineConfig({
   integrations: [
     react(),
     {
-      name: 'replacePhp',
+      name: 'replaceTags',
       hooks: {
         'astro:build:done': (options) => {
-          // SSIを除き拡張子はphpに変更
-          const paths = options.routes
-            .filter(({ pathname }) => !includes(pathname, `/${ssiDir}/`))
-            .map((v) => `dist${v.pathname}/index.html`)
-          try {
-            paths.map((target) => {
-              const phpPath = target.replace('.html', '.php')
-              return renameSync(target, phpPath)
-            })
-          } catch (error) {
-            console.log(error)
-          }
+          removeDoctype(options)
+          renamePhp(options)
         },
       },
     },

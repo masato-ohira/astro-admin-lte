@@ -6,7 +6,7 @@
     "dev": "astro dev",
     "start": "astro dev",
     "ssg": "astro build",
-    "preview": "astro preview",
+    "php": "cd ./dist && php -S localhost:8080",
     "astro": "astro",
     "test": "jest --verbose",
     "git": "git add . && git commit -a -m $M"

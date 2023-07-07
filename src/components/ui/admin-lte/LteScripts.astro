@@ -1,0 +1,15 @@
+---
+const libs = [
+  'https://adminlte.io/themes/v3/plugins/jquery/jquery.min.js',
+  'https://adminlte.io/themes/v3/plugins/bootstrap/js/bootstrap.bundle.min.js',
+  'https://adminlte.io/themes/v3/dist/js/adminlte.min.js?v=3.2.0',
+]
+---
+
+<!-- start LteScripts -->{
+  libs.map((src) => {
+    return <script is:inline src={src} />
+  })
+}
+
+<!-- end LteScripts -->
