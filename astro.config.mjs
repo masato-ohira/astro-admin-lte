@@ -3,8 +3,6 @@ import react from '@astrojs/react'
 import { renamePhp } from './npm-scripts/astro/renamePhp.mjs'
 import { removeDoctype } from './npm-scripts/astro/removeDoctype.mjs'
 
-const ssiDir = 'ssi'
-
 // https://astro.build/config
 export default defineConfig({
   integrations: [
