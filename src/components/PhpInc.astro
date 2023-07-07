@@ -2,6 +2,7 @@
 const { name } = Astro.props
 const isPreview = process.env.NODE_ENV == 'preview'
 
+// 下記はサーバ構成に応じて差し替える必要があります
 // const includeTag = `<?php include $_SERVER['DOCUMENT_ROOT'] . '/ssi/${name}/index.html'; ?>`
 const includeTag = `<?php include '/www/ekzm_clients/astro-admin-lte-example/ssi/${name}/index.html'; ?>`
 ---

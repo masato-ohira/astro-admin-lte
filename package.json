@@ -9,6 +9,7 @@
     "php": "cd ./dist && php -S localhost:8080",
     "astro": "astro",
     "test": "jest --verbose",
+    "deploy": "yarn ssg && yarn git && git ftp push -k & git push",
     "git": "git add . && git commit -a -m $M"
   },
   "dependencies": {

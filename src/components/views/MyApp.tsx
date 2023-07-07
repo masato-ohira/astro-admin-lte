@@ -28,6 +28,12 @@ export const MyApp = () => {
             <Tab {...tabStyle}>Modal</Tab>
           </TabList>
 
+          <Box textAlign={'center'}>
+            Bootstrap + jQueryな環境の中で
+            <br />
+            chakra-ui/reactを利用可能にしています
+          </Box>
+
           <TabPanels>
             <TabPanel>
               <MyButtons />
